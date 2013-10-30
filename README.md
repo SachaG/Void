@@ -6,7 +6,17 @@ Void is based on [Telescope](http://telesc.pe) (an open-source social news app) 
 
 ## Installation
 
-Void is ready to go. Just clone it locally, run it with `mrt`, and start coding!
+If you already have Meteor and [Meteorite](https://github.com/oortcloud/meteorite/), Void is ready to go. Just clone it locally, run it with `mrt`, and start coding!
+
+If not, here are the full instructions:
+
+```
+curl https://install.meteor.com | /bin/sh
+npm install -g meteorite
+git clone https://github.com/SachaG/Void.git myApp
+cd myApp
+mrt
+```
 
 ## Features
 
