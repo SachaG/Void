@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "iron-router": {}
+    },
+    "packages": {
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.6.0",
+        "commit": "c63e92d24c8210e2304ff5fed1b5c463394aeaf6"
+      }
+    }
+  }
+}

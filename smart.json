@@ -1,0 +1,6 @@
+{
+  "meteor": {},
+  "packages": {
+    "iron-router": {}
+  }
+}

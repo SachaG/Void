@@ -1,0 +1,3 @@
+sampleFunction = function () {
+  // do something…
+}
