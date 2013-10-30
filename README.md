@@ -4,35 +4,35 @@ A starter app template for [Meteor](http://meteor.com), using [IronRouter](https
 
 ## File Structure
 
-- client
-	- CSS
-	- helpers
+- **client**
+	- **CSS**
+	- **helpers**
 		- handlebars.js
 		- router.js
-	- views
-		- common
+	- **views**
+		- **common**
 			- footer.html
 			- header.html
 			- layout.html
 			- loading.html
 			- notFound.html
-		- items
+		- **items**
 			- item.html
 			- item.js
 			- items.html
-		- pages
+		- **pages**
 			- homepage.html
 	- main.html
 	- main.js
-- collections
+- **collections**
 	- items.js
-- lib
+- **lib**
 	- helpers.js
 	- permissions.js
-- packages
+- **packages**
 	- iron-router
 	- sample-package
-- public
-- server
+- **public**
+- **server**
 	- fixtures.js
 	- publications.js
