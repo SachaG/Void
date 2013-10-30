@@ -26,9 +26,14 @@ Items.allow({
 
 Meteor.methods({
   createItem: function(item){
-    Items.insert(item);
+    if(can.createItem(Meteor.user()))
+      Items.insert(item);
   },
   removeItem: function(item){
-    Items.remove(item._id);
+    if(can.removeItem(Meteor.user(), item)){
+      Items.remove(item._id);
+    }else{
+      throw new Meteor.Error(403, 'You do not have the rights to delete this item.')
+    }
   }
 });

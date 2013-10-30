@@ -19,7 +19,7 @@ Router.configure({
 var filters = {
 
   myFilter: function () {
-    console.log('Filtering…')
+    // do something
   },
 
   isLoggedIn: function() {
@@ -45,7 +45,7 @@ Router.map(function() {
 
   this.route('items', {
     waitOn: function () {
-      return Meteor.subscribe(items);
+      return Meteor.subscribe('allItems');
     },
     data: function () {
       return {
@@ -57,11 +57,11 @@ Router.map(function() {
   this.route('item', {
     path: '/items/:_id',
     waitOn: function () {
-      return Meteor.subscribe(items);
+      return Meteor.subscribe('singleItem', this.params._id);
     },
     data: function () {
       return {
-        items: Items.findOne(this.params._id)
+        item: Items.findOne(this.params._id)
       }
     }
   });
