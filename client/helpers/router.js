@@ -37,11 +37,7 @@ Router.before(filters.myFilter, {only: ['items']});
 
 Router.map(function() {
 
-  // Top
-
-  this.route('homepage', {
-    path: '/'
-  });
+  // Items
 
   this.route('items', {
     waitOn: function () {
@@ -65,5 +61,22 @@ Router.map(function() {
       }
     }
   });
+
+
+  // Pages
+
+  this.route('homepage', {
+    path: '/'
+  });
+
+  this.route('content');
+
+  // Users
+
+  this.route('login'); 
+
+  this.route('signup'); 
+
+  this.route('forgot'); 
 
 });

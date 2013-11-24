@@ -3,9 +3,21 @@
     <h1>Void</h1>
     <ul>
       <li><a href="{{pathFor 'homepage'}}">Homepage</a></li>
+      <li><a href="{{pathFor 'content'}}">Content page</a></li>
       <li><a href="{{pathFor 'items'}}">Items</a></li>
       <li><a href="/404">404 Link</a></li>
+      {{#if isLoggedIn}}
+        <li><a href="/" class="log-out">Log Out</a></li>
+      {{else}} 
+        <li><a href="{{pathFor 'signup'}}">Sign Up</a></li>
+        <li><a href="{{pathFor 'login'}}">Log In</a></li>   
+      {{/if}}
     </ul>
   </div>
   <hr/>
+  <div class="messages">
+    {{#each messages}}
+      <p class="message message-{{type}}">{{message}}</p>
+    {{/each}}
+  </div>
 </template>
