@@ -30,9 +30,12 @@ Meteor.methods({
       Items.insert(item);
   },
   removeItem: function(item){
+    console.log("attempting ot remove item...");
     if(can.removeItem(Meteor.user(), item)){
+      console.log("can.removeItem, removing...");
       Items.remove(item._id);
     }else{
+      console.log("not can.removeItem, not removing...");
       throw new Meteor.Error(403, 'You do not have the rights to delete this item.')
     }
   }

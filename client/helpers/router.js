@@ -10,8 +10,7 @@ Client-side Router.
 
 Router.configure({
   layoutTemplate: 'layout',
-  loadingTemplate: 'loading',
-  notFoundTemplate: 'notFound',
+  loadingTemplate: 'loading'
 });
 
 // Filters
@@ -70,13 +69,9 @@ Router.map(function() {
   });
 
   this.route('content');
-
-  // Users
-
-  this.route('login'); 
-
-  this.route('signup'); 
-
-  this.route('forgot'); 
+  
+  this.route('notFound', {
+    path: '*'
+  });
 
 });

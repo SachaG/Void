@@ -1,19 +1,25 @@
 <template name="header">
-  <div class="header">
-    <h1>Void</h1>
-    <ul>
-      <li><a href="{{pathFor 'homepage'}}">Homepage</a></li>
-      <li><a href="{{pathFor 'content'}}">Content page</a></li>
-      <li><a href="{{pathFor 'items'}}">Items</a></li>
-      <li><a href="/404">404 Link</a></li>
-      {{#if isLoggedIn}}
-        <li><a href="/" class="log-out">Log Out</a></li>
-      {{else}} 
-        <li><a href="{{pathFor 'signup'}}">Sign Up</a></li>
-        <li><a href="{{pathFor 'login'}}">Log In</a></li>   
-      {{/if}}
-    </ul>
-  </div>
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="{{pathFor 'homepage'}}">Void</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="{{activeRouteClass 'homepage'}}"><a href="{{pathFor 'homepage'}}">Homepage</a></li>
+          <li class="{{activeRouteClass 'content'}}"><a href="{{pathFor 'content'}}">Content page</a></li>
+          <li class="{{activeRouteClass 'items'}}"><a href="{{pathFor 'items'}}">Items</a></li>
+          <li><a href="/404">404 Link</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li>{{loginButtons}}</li>
+        </ul>
+      </div>
+    </div>
+  </header>
   <hr/>
   <div class="messages">
     {{#each messages}}

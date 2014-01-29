@@ -1,5 +1,9 @@
 <template name="layout">
-  {{> header}}
-  {{yield}}
-  {{> footer}}
+  <div class="container">
+    {{> header}}
+    <div id="main" class="row-fluid">
+      {{yield}}
+    </div>
+    {{> footer}}
+  </div>
 </template>
