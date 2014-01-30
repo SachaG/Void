@@ -21,9 +21,5 @@
     </div>
   </header>
   <hr/>
-  <div class="messages">
-    {{#each messages}}
-      <p class="message message-{{type}}">{{message}}</p>
-    {{/each}}
-  </div>
+  {{> alerts}}
 </template>

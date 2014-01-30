@@ -30,7 +30,7 @@ Meteor.methods({
       Items.insert(item);
   },
   removeItem: function(item){
-    console.log("attempting ot remove item...");
+    console.log("attempting to remove item...");
     if(can.removeItem(Meteor.user(), item)){
       console.log("can.removeItem, removing...");
       Items.remove(item._id);

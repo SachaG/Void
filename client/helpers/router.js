@@ -75,3 +75,5 @@ Router.map(function() {
   });
 
 });
+
+Router.before(function() { incrementMessagesRouteCount(); console.log("routing"); });
