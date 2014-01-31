@@ -30,7 +30,12 @@ Template.item.events({
     Meteor.call('removeItem', item, function(error, result){
       //if error flash error
       Router.go('/items');
-      alertMessage("Item deleted.", "success");
+      if (error) {
+        alertMessage("Sorry, you don't have permission to delete this item.", "danger");
+      }
+      else {
+        alertMessage("Item deleted.", "success");
+      }
     });
   }
 
