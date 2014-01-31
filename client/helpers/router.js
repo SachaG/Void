@@ -60,6 +60,10 @@ Router.map(function() {
       }
     }
   });
+  
+  this.route('itemCreate', {
+    path: '/item/create'
+  });
 
 
   // Pages
@@ -76,4 +80,4 @@ Router.map(function() {
 
 });
 
-Router.before(function() { incrementMessagesRouteCount(); console.log("routing"); });
+Router.before(function() { incrementMessagesRouteCount(); });
