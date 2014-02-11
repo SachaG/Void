@@ -7,7 +7,7 @@ standard-app-packages
 preserve-inputs
 accounts-base
 accounts-password
-bootstrap
-accounts-ui-bootstrap-dropdown
 iron-router-progress
 iron-router
+bootstrap-3
+accounts-ui-bootstrap-3

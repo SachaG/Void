@@ -1,7 +1,8 @@
 {
   "meteor": {},
   "packages": {
-    "accounts-ui-bootstrap-dropdown": {},
-    "iron-router-progress": {}
+    "iron-router-progress": {},
+    "bootstrap-3": {},
+    "accounts-ui-bootstrap-3": {}
   }
 }
