@@ -1,23 +1,31 @@
 <template name="header">
-  <div class="header">
-    <h1>Void</h1>
-    <ul>
-      <li><a href="{{pathFor 'homepage'}}">Homepage</a></li>
-      <li><a href="{{pathFor 'content'}}">Content page</a></li>
-      <li><a href="{{pathFor 'items'}}">Items</a></li>
-      <li><a href="/404">404 Link</a></li>
-      {{#if isLoggedIn}}
-        <li><a href="/" class="log-out">Log Out</a></li>
-      {{else}} 
-        <li><a href="{{pathFor 'signup'}}">Sign Up</a></li>
-        <li><a href="{{pathFor 'login'}}">Log In</a></li>   
-      {{/if}}
-    </ul>
-  </div>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{pathFor 'homepage'}}">Void</a>
+      </div>
+      
+      <div class="collapse navbar-collapse" id="main-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="{{activeRouteClass 'homepage'}}"><a href="{{pathFor 'homepage'}}">Homepage</a></li>
+          <li class="{{activeRouteClass 'content'}}"><a href="{{pathFor 'content'}}">Content page</a></li>
+          <li class="{{activeRouteClass 'items'}}"><a href="{{pathFor 'items'}}">Items</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {{loginButtons}}
+        </ul>
+
+      </div> <!-- /.navbar-collapse -->
+    </div> <!-- /.container-fluid -->
+  </nav>
+  
   <hr/>
-  <div class="messages">
-    {{#each messages}}
-      <p class="message message-{{type}}">{{message}}</p>
-    {{/each}}
-  </div>
+  {{> alerts}}
 </template>

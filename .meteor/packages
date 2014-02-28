@@ -5,7 +5,11 @@
 
 standard-app-packages
 preserve-inputs
-iron-router
 accounts-base
 accounts-password
-accounts-ui
+iron-router-progress
+iron-router
+bootstrap-3
+accounts-ui-bootstrap-3
+autoform
+collection2

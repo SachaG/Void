@@ -28,8 +28,14 @@ Template.item.events({
     var item = this;
     e.preventDefault();
     Meteor.call('removeItem', item, function(error, result){
-      alert('Item deleted.');
+      //if error flash error
       Router.go('/items');
+      if (error) {
+        alertMessage("Sorry, you don't have permission to delete this item.", "danger");
+      }
+      else {
+        alertMessage("Item deleted.", "success");
+      }
     });
   }
 

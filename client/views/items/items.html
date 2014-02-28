@@ -1,4 +1,11 @@
 <template name="items">
+  {{#if currentUser}}
+    <a href="{{pathFor 'itemCreate'}}">
+      <button type="button" class="btn btn-primary">
+        + Create new item
+      </button>
+    </a>
+  {{/if}}
   <h3>Items: </h3>
   <ul>
     {{#each items}}

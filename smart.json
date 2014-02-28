@@ -1,6 +1,10 @@
 {
   "meteor": {},
   "packages": {
-    "iron-router": {}
+    "iron-router-progress": {},
+    "bootstrap-3": {},
+    "accounts-ui-bootstrap-3": {},
+    "autoform": {},
+    "collection2": {}
   }
 }
