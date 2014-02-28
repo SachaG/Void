@@ -6,19 +6,48 @@ All code related to the Items collection goes here.
 
 /+ ---------------------------------------------------- */
 
-Items = new Meteor.Collection('items');
+Items = new Meteor.Collection('items', {
+  schema: new SimpleSchema({
+    title: {
+      type: String,
+      label: "Title",
+      max: 200
+    },
+    body: {
+      type: String,
+      label: "Description",
+      max: 2000
+    }
+  })
+});
+
+
+if (Meteor.isClient) {
+  ItemForm = new AutoForm(Items);
+  Meteor.startup(function() {
+    ItemForm.hooks({
+      after: {
+        insert: function(error, result, template) {
+          console.log(result);
+          Router.go('item', {_id: result});
+          alertMessage("Item inserted successfully!", "success");
+        }
+      }
+    });
+  });
+}
 
 // Allow/Deny
 
 Items.allow({
   insert: function(userId, doc){
-    return can.createItem(userId);
+    return true;//can.createItem(userId);
   },
   update:  function(userId, doc, fieldNames, modifier){
-    return can.editItem(userId, doc);
+    return true; //can.editItem(userId, doc);
   },
   remove:  function(userId, doc){
-    return can.removeItem(userId, doc);
+    return true; //can.removeItem(userId, doc);
   }
 });
 

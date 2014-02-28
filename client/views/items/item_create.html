@@ -1,13 +1,23 @@
 <template name="itemCreate">
-  <form role="form">
-    <div class="form-group">
-      <label for="itemName">Item Title</label>
-      <input type="text" class="form-control" name="title" placeholder="">
+  Create Item
+  {{#autoForm schema=schema id="insertItemForm"}}
+  <fieldset>
+    <legend>Add an item</legend>
+    <div class="form-group{{#if afFieldIsInvalid 'title'}} has-error{{/if}}">
+      {{afFieldLabel 'title'}}
+      {{afFieldInput 'title'}}
+      {{#if afFieldIsInvalid 'title'}}
+      <span class="help-block">{{afFieldMessage 'title'}}</span>
+      {{/if}}
     </div>
-    <div class="form-group">
-      <label for="itemDescription">Item Description</label>
-      <textarea class="form-control" name="body" placeholder="" rows="3"></textarea>
+    <div class="form-group{{#if afFieldIsInvalid 'body'}} has-error{{/if}}">
+      {{afFieldLabel 'body'}}
+      {{afFieldInput 'body'}}
+      {{#if afFieldIsInvalid 'body'}}
+      <span class="help-block">{{afFieldMessage 'body'}}</span>
+      {{/if}}
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
+  </fieldset>  
+  <button type="submit" class="btn btn-primary insert">Insert</button>
+  {{/autoForm}}
 </template>
