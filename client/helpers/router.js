@@ -25,13 +25,13 @@ var filters = {
   isLoggedIn: function() {
     if (!(Meteor.loggingIn() || Meteor.user())) {
       alert('Please Log In First.')
-      this.stop(); 
+      this.stop();
     }
   }
 
 }
 
-Router.before(filters.myFilter, {only: ['items']});
+Router.onBeforeAction(filters.myFilter, {only: ['items']});
 
 // Routes
 
@@ -73,10 +73,10 @@ Router.map(function() {
 
   // Users
 
-  this.route('login'); 
+  this.route('login');
 
-  this.route('signup'); 
+  this.route('signup');
 
-  this.route('forgot'); 
+  this.route('forgot');
 
 });
