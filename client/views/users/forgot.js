@@ -10,7 +10,7 @@ Template.forgot.events = {
       if(error){
         flash(error.reason, "error");
       }else{
-        Router.go('/signin');
+        Router.go('/login');
         flash("Password reset link sent!");
       }
     });
