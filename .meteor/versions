@@ -5,11 +5,14 @@ accounts-ui@1.0.0
 application-configuration@1.0.0
 autoupdate@1.0.5
 binary-heap@1.0.0
-blaze-layout@0.0.0
 blaze-tools@1.0.0
 blaze@1.0.3
 callback-hook@1.0.0
 check@1.0.0
+cmather:iron-core@0.2.0
+cmather:iron-dynamic-template@0.2.1
+cmather:iron-layout@0.2.0
+cmather:iron-router@0.8.2
 ctl-helper@1.0.2
 ctl@1.0.0
 deps@1.0.1
@@ -20,7 +23,6 @@ geojson-utils@1.0.0
 html-tools@1.0.0
 htmljs@1.0.0
 id-map@1.0.0
-iron-router@0.0.0
 jquery@1.0.0
 json@1.0.0
 less@1.0.6
